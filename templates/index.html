@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head><title>AI To-Do</title></head>
+<head>
+    <title>AI To-Do App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
 <body>
-  <h1>My AI To-Do App</h1>
-  <form method="POST">
-    <input name="content" placeholder="Enter a task" required>
-    <button type="submit">Add</button>
-  </form>
-  <ul>
-    {% for task in tasks %}
-      <li>{{ task.content }} - <strong>{{ task.label }}</strong></li>
-    {% endfor %}
-  </ul>
+    <h1>Welcome to AI To-Do App</h1>
+    <form method="post">
+        <input type="text" name="task" placeholder="Enter a task">
+        <button type="submit">Add Task</button>
+    </form>
+    <ul>
+        {% for task in tasks %}
+            <li>{{ task }}</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
